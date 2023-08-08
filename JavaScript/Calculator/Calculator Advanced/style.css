@@ -1,0 +1,70 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.calculatorContainer {
+    width: 25rem;
+    height: 35rem;
+    background-color: rgb(244, 189, 198);
+    display: flex;
+    border-radius: 2rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultContainer {
+    margin-top: 2%;
+    width: 98%;
+    height: 12%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: end;
+}
+
+.resultScreen {
+    width: 80%;
+    background-color: rgb(3, 68, 3);
+    height: 60%;
+}
+
+.buttonsContainer {
+    margin: 2rem auto;
+    display: flex;
+    width: 90%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.firstRow,
+.secondRow,
+.thirdRow,
+.fourthRow {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 25%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.firstRow button,
+.secondRow button,
+.thirdRow button,
+.fourthRow button {
+    height: 70%;
+    width: 20%;
+    border-radius: 10rem;
+    transition: 1s ease;
+}
+
+button:hover {
+    background-color: rgba(237, 142, 142, 0.75);
+    transition: 0.3s ease;
+    box-shadow: 0rem 0rem 2rem 1.5rem rgba(237, 142, 142, 0.75);
+}
