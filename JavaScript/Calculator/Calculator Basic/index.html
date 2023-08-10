@@ -7,15 +7,19 @@
     <title>Calculator Basic</title>
 </head>
 <body>
-    <input type="number" placeholder="First Number">
-    <div class="options">
-        <button id="add">+</button>
-        <button id="sub">-</button>
-        <button id="div">/</button>
-        <button id="mul">x</button>
-
-        <script src="./script.js"></script>
-    </div>
-    <input type="number" placeholder="Second Number">
+    <input id="numberOne" type="number" placeholder="First Number">
     <hr>
+    <input id="numberTwo" type="number" placeholder="Second Number">
+    <hr>
+    <div class="options">
+        <button id="add" class="btn">+</button>
+        <button id="sub" class="btn">-</button>
+        <button id="div" class="btn">/</button>
+        <button id="mul" class="btn">x</button>
+    </div>
+    <div class="result">
+        <h3>Result:</h3>
+        <h2 id="result"></h2>
+    </div>
+    <script src="./script.js"></script>
 </html>
