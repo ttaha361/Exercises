@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+    margin: 0;
+    
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.textContainer h1{font-size: 7rem; margin: -1rem;}
+.textContainer h3{font-size: 2rem;}
+
+.timerContainer {
+    color: white;
+}
+
+.buttonContainer {
+    width: 28%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonContainer button{
+    border-radius: 1.5rem;
+    border: none;
+    font-size: 3rem;
+}
