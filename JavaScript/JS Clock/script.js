@@ -8,7 +8,7 @@ setInterval(function () {
 
     hourElement.textContent = ((d.getHours()<10?'0':'' + d.getHours() + ":"))
     minElement.textContent = ((d.getMinutes()<10?'0':'') + d.getMinutes() + ":")
-    secElement.textContent = (d.getSeconds()<10?'0': '' + d.getSeconds())
+    secElement.textContent = ((d.getSeconds()<10?'0': '') + d.getSeconds())
 }, 500);
 
 mod.addEventListener('click',()=> {
