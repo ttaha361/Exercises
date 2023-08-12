@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap');
+
 
 body {
     margin: 0;
-    
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 .mainContainer {
@@ -36,7 +37,12 @@ body {
 }
 
 .buttonContainer button{
+    font-family: 'Chakra Petch', sans-serif;
     border-radius: 1.5rem;
     border: none;
     font-size: 3rem;
+}
+
+.recordsClass h1 {
+    color: gray;
 }

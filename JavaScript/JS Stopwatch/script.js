@@ -2,6 +2,13 @@ const timeText = document.getElementById('timeText')
 const startButton = document.getElementById('startButton')
 const pauseButton = document.getElementById('pauseButton')
 const stopButton = document.getElementById('stopButton')
+const lastRecord = document.getElementById('lastRecord')
+const lightMode = document.getElementById('lightMode')
+const timerContainer = document.querySelector('.timerContainer');
+const textContainer= document.querySelector('.textContainer');
+const mainContainer= document.querySelector('.mainContainer');
+const buttons = document.querySelectorAll('.buttonContainer button');
+
 
 let seconds = 0
 let minutes = 0
@@ -32,4 +39,17 @@ stopButton.addEventListener('click',()=>{
     minutes = 0
     zerocheck = 0
     zeroSecond = 0
+
+    lastRecord.textContent = ("Previous Time: " + timeText.textContent)
+})
+
+
+lightMode.addEventListener('click', ()=> {
+    timerContainer.classList.toggle('timerContainer-alternative');
+    textContainer.classList.toggle('textContainer-alternative');
+    mainContainer.classList.toggle('mainContainer-alternative');
+    
+    buttons.forEach(button => {
+        button.classList.toggle('button-alternative');
+    });
 })
