@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,700&display=swap');
 
-
 body {
     margin: 0;
     font-family: 'Chakra Petch', sans-serif;
@@ -13,6 +12,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    transition: 1s ease;
+}
+
+.mainContainer-alternative {
+    background-color: white;
+    transition: 1s ease;
 }
 
 .textContainer {
@@ -21,20 +26,34 @@ body {
     align-items: center;
     justify-content: center;
     color: white;
+    transition: 1s ease;
 }
+
+.textContainer-alternative{
+    color: black;
+    transition: 1s ease;
+}
+
 
 .textContainer h1{font-size: 7rem; margin: -1rem;}
 .textContainer h3{font-size: 2rem;}
 
 .timerContainer {
     color: white;
+    transition: 1s ease;
 }
 
+.timerContainer-alternative {
+    color: black;
+    transition: 1s ease;
+}
 .buttonContainer {
     width: 28%;
     display: flex;
     justify-content: space-between;
 }
+
+#centerButton {justify-content: center;}
 
 .buttonContainer button{
     font-family: 'Chakra Petch', sans-serif;
@@ -42,7 +61,16 @@ body {
     border: none;
     font-size: 3rem;
 }
+.buttonContainer .button-alternative {
+    background-color: black;
+    color: white;
+}
 
 .recordsClass h1 {
-    color: gray;
+    color: rgb(65, 64, 64);
 }
+
+button:hover{cursor: pointer; opacity: 0.5; transition: 0.5s ease;}
+button{transition: 0.5s ease;}
+
+

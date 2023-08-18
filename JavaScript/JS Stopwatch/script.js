@@ -10,30 +10,41 @@ const mainContainer= document.querySelector('.mainContainer');
 const buttons = document.querySelectorAll('.buttonContainer button');
 
 
+blink = setInterval(function (){
+    timerContainer.classList.toggle('timerContainer-alternative');
+
+},700)
+
 let seconds = 0
 let minutes = 0
 let zerocheck = 0
 let zeroSecond = 0
+let started = false
 
 startButton.addEventListener('click',()=>{
-    timerInterval = setInterval(function () {
-        timeText.textContent = (String(zerocheck) + String(minutes) + ":"+ zeroSecond + seconds)
-        seconds += 1
-        if (seconds === 10){zeroSecond = ""}
-        if (seconds === 60){
-            zeroSecond = 0;
-            seconds = 0; 
-            if(minutes === 9){zerocheck = ""};
-            minutes += 1;
-        }
-    },1000)
+    if(started == false) {
+        started = true;
+        timerInterval = setInterval(function () {
+            timeText.textContent = (String(zerocheck) + String(minutes) + ":"+ zeroSecond + seconds)
+            seconds += 1
+            if (seconds === 10){zeroSecond = ""}
+            if (seconds === 60){
+                zeroSecond = 0;
+                seconds = 0; 
+                if(minutes === 9){zerocheck = ""};
+                minutes += 1;
+            }
+        },1000)
+    }
 })
 
 pauseButton.addEventListener('click', ()=> {
     clearInterval(timerInterval);
+    started = false
 })
 
 stopButton.addEventListener('click',()=>{
+    started = false;
     clearInterval(timerInterval);
     seconds = 0
     minutes = 0
