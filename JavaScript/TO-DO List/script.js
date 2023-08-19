@@ -3,10 +3,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const TaskButton = document.getElementById('TaskButton');
     const taskContainer = document.querySelector('.taskContainer'); // Corrected selector
 
-    const localArray=[];
-
-    localArray.push(JSON.parse(localStorage.getItem('tasks')));
+    var localArray = JSON.parse(localStorage.getItem('tasks')) || []; // Initialize as an empty array if no data in local storage
     console.log(localArray);
+    let i = 0;
+    let len = localArray.length;
+    for(i = 0; i < len; i++) {
+        var div = document.createElement('div');
+        div.classList.add('tasks');
+        
+        var checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        div.appendChild(checkbox);
+        var hr = document.createElement('hr');
+        div.appendChild(document.createTextNode(localArray[i])); // Add text content after the checkbox
+        div.appendChild(hr);
+        taskContainer.appendChild(div);
+    }
 
     TaskButton.addEventListener('click', () => {
         if (TaskText.value !== "") {
@@ -16,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             var checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             div.appendChild(checkbox);
-            var hr = document.createElement('hr')
+            var hr = document.createElement('hr');
             div.appendChild(document.createTextNode(TaskText.value)); // Add text content after the checkbox
             div.appendChild(hr);
             taskContainer.appendChild(div);
