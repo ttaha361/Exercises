@@ -3,16 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const TaskButton = document.getElementById('TaskButton');
     const taskContainer = document.querySelector('.taskContainer'); // Corrected selector
 
-    
-    var taskArray = [];
-    
-    const startLoop = () =>{
-        taskArray.push = JSON.parse(localStorage.getItem('tasks'));
-    }
+    const localArray=[];
 
-    startLoop();
+    localArray.push(JSON.parse(localStorage.getItem('tasks')));
+    console.log(localArray);
 
-    console.log(taskArray);
     TaskButton.addEventListener('click', () => {
         if (TaskText.value !== "") {
             var div = document.createElement('div');
@@ -24,10 +19,10 @@ document.addEventListener('DOMContentLoaded', () => {
             var hr = document.createElement('hr')
             div.appendChild(document.createTextNode(TaskText.value)); // Add text content after the checkbox
             div.appendChild(hr);
-            taskContainer.appendChild(div);    
-            taskArray.push(TaskText.value);
+            taskContainer.appendChild(div);
+            localArray.push(TaskText.value);
+            localStorage.setItem('tasks', JSON.stringify(localArray));
             TaskText.value = ""; // Clear input field
-            localStorage.setItem('tasks', JSON.stringify(taskArray));
         }
     });
 });
