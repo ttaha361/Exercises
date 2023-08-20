@@ -60,3 +60,25 @@ input[type=text] {
     height: 1.2rem;
     width: 1.3rem;
 }
+
+.tasks-alternative {
+    height: 0rem;
+    font-size: 0rem;
+    margin: 0rem 0rem;
+    color: gray;
+    transition: 1.3s ease;
+}
+
+#resetButton {
+    background-color: rgb(255, 182, 182);
+    border: none;
+    height: 2rem;
+    font-size: 1.2rem;
+    transition: 1s ease;
+}
+
+#resetButton:hover {
+    background-color: red;
+    transition: 1s ease;
+}
+

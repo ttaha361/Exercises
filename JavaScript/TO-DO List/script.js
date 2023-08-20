@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const TaskText = document.getElementById('TaskText');
     const TaskButton = document.getElementById('TaskButton');
     const taskContainer = document.querySelector('.taskContainer'); // Corrected selector
+    const tasks = document.querySelector('.tasks');
+    const resetButton = document.getElementById('resetButton');
 
     var localArray = JSON.parse(localStorage.getItem('tasks')) || []; // Initialize as an empty array if no data in local storage
     console.log(localArray);
@@ -37,4 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
             TaskText.value = ""; // Clear input field
         }
     });
+    resetButton.addEventListener('click', () => {
+        localStorage.clear();
+        location.reload();
+    })
 });
