@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-.messageField input {
+.nameContainer input {
     background-color: red;
     color: black;
     border-radius: 16px;

@@ -4,7 +4,7 @@ const messageField = document.querySelector('#messageField');
 const debtField = document.querySelector('#debtField');
 const debtSearchField = document.querySelector('#debtSearchField');
 
-
+//Transferring localstorage data to an array and updating text field on every start
 var dataArray = JSON.parse(localStorage.getItem('debt'));
 if(dataArray != null){
     for(i = 0; i < dataArray.length; i++) {
@@ -13,18 +13,32 @@ if(dataArray != null){
         dataField.appendChild(dta);
     }
 }
+else{dataArray = [];}
 
+//Add Button Function
 addButton.addEventListener('click', () => {
-    var dta = document.createElement('li');
-    dta.textContent = ((messageField.value) + ' ' + '-' + ' ' + (debtField.value) + '$');
-    dataField.appendChild(dta);
-    var dataObject = { Name: messageField.value, Debt: debtField.value};
-    dataArray.push(dataObject);
-    localStorage.setItem('debt', JSON.stringify(dataArray));
-    messageField.value = "";
-    debtField.value = "";
+    if(messageField.value != "" && debtField.value != "") {
+        var dta = document.createElement('li');
+        dta.textContent = ((messageField.value) + ' ' + '-' + ' ' + (debtField.value) + '$');
+        dataField.appendChild(dta);
+        var dataObject = { Name: messageField.value, Debt: debtField.value};
+        dataArray.push(dataObject);
+        localStorage.setItem('debt', JSON.stringify(dataArray));
+        messageField.value = "";
+        debtField.value = "";
+    }
 })
 
-debtSearchField.addEventListener('keypress', () => {
-    console.log("typing")
-})
+//Search Field Function
+debtSearchField.addEventListener('input', () => {
+    dataField.textContent = "";
+    if(dataArray != null){
+        for(i = 0; i < dataArray.length; i++) {
+            if (dataArray[i].Name.toLowerCase().includes(debtSearchField.value.toLowerCase())) {
+                var dta = document.createElement('li');
+                dta.textContent = ((dataArray[i].Name) + ' ' + '-' + ' ' + (dataArray[i].Debt) + '$');
+                dataField.appendChild(dta);
+            }
+        }
+}})
+
