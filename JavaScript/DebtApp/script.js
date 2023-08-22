@@ -4,6 +4,7 @@ const messageField = document.querySelector('#messageField');
 const debtField = document.querySelector('#debtField');
 const debtSearchField = document.querySelector('#debtSearchField');
 const deleteButton = document.getElementById('deleteButton');
+const updateButton = document.getElementById('updateButton');
 
 //Transferring localstorage data to an array and updating text field on every start
 var dataArray = JSON.parse(localStorage.getItem('debt'));
@@ -62,3 +63,13 @@ deleteButton.addEventListener('click', () => {
     }
 })
 
+updateButton.addEventListener('click', () => {
+    if(debtSearchField.value !="" && dataArray.length != null && debtField.value != "") {
+        for(i = 0; i < dataArray.length ; i++) {
+            if (dataArray[i].Name.toLowerCase().includes(debtSearchField.value.toLowerCase())) {
+                dataArray[i].Debt = debtField.value;
+                localStorage.setItem('debt', JSON.stringify(dataArray));
+            }
+        }
+    }
+})
