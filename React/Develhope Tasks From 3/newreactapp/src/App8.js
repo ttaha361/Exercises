@@ -1,5 +1,10 @@
 import React from 'react';
 
+// Age component
+function Age({ age }) {
+  return <p>Your age is {age}</p>;
+}
+
 // Welcome component
 class Welcome extends React.Component {
   render() {
@@ -7,7 +12,7 @@ class Welcome extends React.Component {
     return (
       <div>
         <p>Welcome, {name}!</p>
-        {age && <p>Your age is {age}</p>}
+        {age !== undefined && age !== null && <Age age={age} />} {/* Render the Age component if age is present */}
       </div>
     );
   }
