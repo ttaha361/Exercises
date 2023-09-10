@@ -1,21 +1,23 @@
 import React from 'react';
 import './App.css';
 
-// Hello component
-function Hello() {
-  return <div>Hello</div>;
-}
-
-// Message component
-function Message() {
-  return <div>It's time to learn React!!!</div>;
+// Welcome component
+class Welcome extends React.Component {
+  render() {
+    const { name } = this.props;
+    return <p>Welcome, {name}!</p>;
+  }
 }
 
 function App() {
+  // Pass a name prop to the Welcome component
+  const name = 'John'; // You can change 'John' to any name you prefer
   return (
     <div className="App">
       <Hello />
       <Message />
+      {/* Render the Welcome component with the name prop */}
+      <Welcome name={name} />
     </div>
   );
 }
