@@ -4,7 +4,7 @@
 
 // Add the `any` type to fix the type errors in the following code.
 
-let currency = { name: "Indian rupee" };
+let currency:any = { name: "Indian rupee" };
 
 currency.code = "THB";
 
