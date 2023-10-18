@@ -8,7 +8,7 @@
 interface Country {
     name: string;
     code: string;
-    population: number;
+    population?: number;
 }
 
 const countryA: Country = {
@@ -43,9 +43,9 @@ const currencyData: Currency = {
     symbol: "€",
 };
 
-currencyData.name = "Gold";
-
-currencyData.code = "GGG";
+// The following lines would cause a type error now.
+// currencyData.name = "Gold";
+// currencyData.code = "GGG";
 
 // ----
 
