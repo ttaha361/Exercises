@@ -13,17 +13,18 @@ currency = "Baht";
 // Fix the if statement in this function so the type of `value` is narrowed to `string`.
 
 function countryNameLength(value: unknown) {
-    if (typeof value === "number") {
+    if (typeof value === "string") {
         console.log(value.length);
     }
 }
+
 
 countryNameLength("United States of America");
 
 // Fix the type error we see when calling this function.
 // Hint: Replace one of the `never` types with a different type.
 
-function throwCountryError(message: never): never {
+function throwCountryError(message: string): never {
     throw new Error(`Could not find country: ${message}`);
 }
 
